@@ -36,19 +36,20 @@
      <h2>To Buy:</h2>
      <ul>
        <li ng-repeat="item in buyer.itemsToBuy">Buy {{item.quantity}} {{item.name}}
-         <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button>
+         <button class="btn btn-default" ng-click="buyer.itemBought($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button>
        </li>
      </ul>
-     <div class="emptyMessage">Everything is bought!</div>
+     <div ng-hide='buyer.itemsToBuy.length > 0' class="emptyMessage">Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
     <div class="col-md-6" ng-controller='AlreadyBoughtController as checker'>
      <h2>Already Bought:</h2>
      <ul>
-       <li>Bought 10 cookies</li>
+       <li ng-repeat="item in checker.boughtItems">Items in basket: {{item.quantity}} {{item.name}}
+       </li>
      </ul>
-     <div class="emptyMessage">Nothing bought yet.</div>
+     <div ng-hide='checker.boughtItems.length > 0' class="emptyMessage">Nothing bought yet.</div>
     </div>
   </div>
 </div>
