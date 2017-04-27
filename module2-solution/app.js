@@ -35,12 +35,10 @@
     var boughtItems = [];
 
     service.getItemsToBuy = function(){
-      console.log("getItemsToBuy");
       return itemsToBuy;
     }
 
     service.getBoughtItems = function(){
-      console.log("getBoughtItems");
       return boughtItems;
     }
 
@@ -48,8 +46,6 @@
       var item = itemsToBuy[itemIndex];
       itemsToBuy.splice(itemIndex, 1);
       boughtItems.push(item);
-      console.log(itemIndex);
-      console.log(item);
     }
   }
 })()
